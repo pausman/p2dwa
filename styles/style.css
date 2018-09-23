@@ -1,0 +1,17 @@
+/* a little css  to improve it visually */
+
+body {
+    font-family: "Georgia", "Arial", sans-serif;
+}
+
+label, p {
+    font-size: 20px;
+}
+
+p {
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+input[type=text] {
+    text-align: right
+}

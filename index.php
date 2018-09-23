@@ -15,41 +15,42 @@
 <body>
 <div class="container-fluid">
     <div class="jumbotron">
-    <h1> Caesar Cipher</h1>
-    <p> The Caesar Cipher, also known as a shift cipher, is one of the oldest and simplest forms of encrypting a message. It is a type of substitution cipher where each letter in the original message is replaced with a letter corresponding to a certain number of letters shifted up or down in the alphabet.</p>
-    <form method='GET' action='cipher.php'>
-        <div class="form-group">
-        <label> Enter a text to encode  </label>
-        </div>
-        <div class="form-group">
-         <textarea class="form-control" rows="4" cols="50" name='textToEncode'></textarea>
-        </div>
+        <h1> Caesar Cipher</h1>
+        <p> The Caesar Cipher, also known as a shift cipher, is one of the oldest and simplest forms of encrypting a message. It is a type of substitution cipher where each letter in the original message is replaced with a letter corresponding to a certain number of letters shifted up or down in the alphabet.</p>
+        <form method='GET' action='cipher.php'>
+            <div class="form-group">
+                <label> Enter a text to encode </label>
 
-        <div class="form-group">
+         <textarea class="form-control" rows="4" cols="50" name='textToEncode' placeholder="Describe yourself here...">
 
-            <label> Shift length:
+         </textarea>
+            </div>
 
-                <input type='text'  maxlength="4" size="4" name='shiftLength' value='2'>
-            </label>
-        </div>
+            <div class="form-group">
 
-        <div class="form-group">
-            <label> Shift direction:</label>
-        </div>
-        <div class="form-check">
+                <label> Shift length:
 
-            <input type="radio" name="shiftDirection" value="right" checked> Rotate Right or Up<br>
-            <input type="radio" name="shiftDirection" value="left"> Rotate Left or Down<br>
+                    <input type='text' maxlength="2" size="2" name='shiftLength' value='2'>
+                </label>
+            </div>
 
-        </div>
+            <div class="checkbox">
+                <label class="form-check-label" for='shiftDirection'> Shift direction:</label>
+            </div>
+            <div class="checkbox">
 
-        <p>
+                <input type="radio" name="shiftDirection" value="right" checked> Rotate Right or Up<br>
+                <input type="radio" name="shiftDirection" value="left"> Rotate Left or Down<br>
 
-        <div class="btn-group">
-        <input type='submit' class="btn btn-secondary" value='Encode'>
-        <input type="reset" class="btn btn-secondary">
-        </div>
-    </form>
+            </div>
+
+            <p>
+
+            <div class="btn-group">
+                <input type='submit' class="btn btn-primary" value='Encode'>
+                <input type="reset" class="btn btn-info">
+            </div>
+        </form>
     </div>
 </div>
 </body>
