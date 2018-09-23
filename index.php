@@ -29,14 +29,15 @@
 
             <label> Shift length:
 
-                <input type='text'  maxlength="4" size="4" name='shiftLength' value='13'>
+                <input type='text'  maxlength="4" size="4" name='shiftLength' value='2'>
             </label>
         </div>
 
         <div class="form-group">
-            <label> Shift direction. An integer from 1 to 25.</label>
+            <label> Shift direction:</label>
         </div>
         <div class="form-check">
+
             <input type="radio" name="shiftDirection" value="right" checked> Rotate Right or Up<br>
             <input type="radio" name="shiftDirection" value="left"> Rotate Left or Down<br>
 
