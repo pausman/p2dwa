@@ -22,23 +22,23 @@
         <label> Enter a text to encode  </label>
         </div>
         <div class="form-group">
-         <textarea class="form-control" rows="4" cols="50"></textarea>
+         <textarea class="form-control" rows="4" cols="50" name='textToEncode'></textarea>
         </div>
 
         <div class="form-group">
 
             <label> Shift length:
 
-                <input type='text'  maxlength="4" size="4" name='shiftLength'>
+                <input type='text'  maxlength="4" size="4" name='shiftLength' value='13'>
             </label>
         </div>
 
         <div class="form-group">
-            <label> Shift direction </label>
+            <label> Shift direction. An integer from 1 to 25.</label>
         </div>
         <div class="form-check">
-            <input type="radio" name="shiftDirection" value="right" checked> Shift Right or Up<br>
-            <input type="radio" name="shiftDirection" value="left"> Shift Left or Down<br>
+            <input type="radio" name="shiftDirection" value="right" checked> Rotate Right or Up<br>
+            <input type="radio" name="shiftDirection" value="left"> Rotate Left or Down<br>
 
         </div>
 
