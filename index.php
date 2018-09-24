@@ -1,3 +1,7 @@
+<?php
+require('logic.php');
+?>
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -21,16 +25,27 @@
             <div class="form-group">
                 <label> Enter a text to encode </label>
 
-         <textarea class="form-control" rows="4" cols="50" name='textToEncode' placeholder="Describe yourself here...">
+                <textarea class="form-control"
+                          rows="3"
+                          name="textToEncode"
+                >
+                <?php if (isset($textToEncode)) {
+                    echo $textToEncode;
+                } ?></textarea>
 
-         </textarea>
+
             </div>
 
             <div class="form-group">
 
                 <label> Shift length:
 
-                    <input type='text' maxlength="2" size="2" name='shiftLength' value='2'>
+                    <input type='text' maxlength="2" size="2" name='shiftLength'
+                           value='<?php if (isset($shiftLength)) {
+                               echo $shiftLength;
+                           } else {
+                               echo '2';
+                           } ?>'>
                 </label>
             </div>
 
@@ -39,8 +54,10 @@
             </div>
             <div class="checkbox">
 
-                <input type="radio" name="shiftDirection" value="right" checked> Rotate Right or Up<br>
-                <input type="radio" name="shiftDirection" value="left"> Rotate Left or Down<br>
+                <input type="radio" name="shiftDirection" value="right"
+                    <?php if ((isset($shiftDirection) and $shiftDirection == "right") or (!(isset($shiftDirection)))) echo 'checked' ?> > Rotate Right or Up<br>
+                <input type="radio" name="shiftDirection" value="left"
+                    <?php if (isset($shiftDirection) and $shiftDirection == "left") echo 'checked' ?> > Rotate Left or Down<br>
 
             </div>
 
@@ -51,6 +68,18 @@
                 <input type="reset" class="btn btn-info">
             </div>
         </form>
+
+
+        <div id='encodedResults'>
+
+            <?php if (isset($encodedText)): ?>
+                <div class='alert alert-primary' role='alert'>
+                    Encoded String: <em><?= $encodedText ?></em>
+
+                </div>
+            <?php endif; ?>
+
+        </div>
     </div>
 </div>
 </body>

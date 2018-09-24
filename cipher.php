@@ -21,10 +21,11 @@ $shiftDirection = $_GET['shiftDirection'];
 
 
 
-# fix length if the want to shift left
+# fix length if the want to shift left but return the original length
 if ($shiftDirection == 'left') {
-    $shiftLength = 26 - $shiftLength;
-}
+    $shiftLength2 = 26 - $shiftLength;
+} else
+{   $shiftLength2 = $shiftLength;}
 
 # loop through each character in the input striing
 $encodedText  = '';
@@ -38,7 +39,7 @@ for ($pos = 0; $pos < strlen($textToEncode); $pos++) {
             $baseA = ord('A');
         }
         $encodedText[$pos] =
-            chr(((($currentChar + $shiftLength + $baseA) % $baseA) % 26) + $baseA);
+            chr(((($currentChar + $shiftLength2 + $baseA) % $baseA) % 26) + $baseA);
     } else {
 # if not alpha just leave it in.
         $encodedText[$pos] = chr($currentChar);
@@ -50,7 +51,7 @@ $_SESSION["encoded"] = [
     'encodedText' => $encodedText,
     'textToEncode' => $textToEncode,
     'shiftLength' => $shiftLength,
-    'shiftDirection ' => $shiftDirection,
+    'shiftDirection' => $shiftDirection,
 ];
 
 # Redirect to index.php

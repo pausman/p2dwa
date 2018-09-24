@@ -15,3 +15,7 @@ p {
 input[type=text] {
     text-align: right
 }
+
+#encodedResults {
+    margin-top: 12px;
+
