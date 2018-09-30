@@ -9,14 +9,18 @@
  */
 # Setup the validation code
 require 'Form.php';
+require 'CaesarCipher.php';
+
 use DWA\Form;
-$form = new Form($_GET);
+use PMA\CaesarCipher;
 
 # Start up session to store data results
 session_start();
 
 # Include the helper functions by Susan Buck
 require('includes/helpers.php');
+#initialize form class
+$form = new Form($_GET);
 
 # Get the data from the form.
 # use functions from form.php to make it more readable
@@ -24,6 +28,8 @@ $textToEncode = $form->get('textToEncode');
 $shiftLength = $form->get('shiftLength');
 $shiftDirection = $form->get('shiftDirection');
 
+# initialize CaesarCipher class
+$cipher = new CaesarCipher($textToEncode);
 
 # validate
 $submitted = $form->isSubmitted();
@@ -37,40 +43,18 @@ if ($submitted) {
     );
 }
 
+# initialize the class
 
 # if no errors process the text
-if(!$form->hasErrors) {
-# fix length if the want to shift left but return the original length
-    if ($shiftDirection == 'left') {
-        $shiftLength2 = 26 - $shiftLength;
-    } else {
-        $shiftLength2 = $shiftLength;
-    }
-
-# loop through each character in the input striing
-    $encodedText = '';
-    for ($pos = 0; $pos < strlen($textToEncode); $pos++) {
-        $currentChar = ord($textToEncode[$pos]);
-# only encode alpha characters
-        if (ctype_alpha($currentChar)) {
-            if ($currentChar >= ord("a") and $currentChar <= ord("z")) {
-                $baseA = ord('a');
-            } else {
-                $baseA = ord('A');
-            }
-            $encodedText[$pos] =
-                chr(((($currentChar + $shiftLength2 + $baseA) % $baseA) % 26) + $baseA);
-        } else {
-# if not alpha just leave it in.
-            $encodedText[$pos] = chr($currentChar);
-        }
-    }
+if (!$form->hasErrors) {
+# encode string
+    $encodedText = $cipher->encodeText($shiftLength, $shiftDirection);
 }
 
 # Store the results
 $_SESSION["encoded"] = [
     'submitted' => $submitted,
-    'errors' =>$errors,
+    'errors' => $errors,
     'hasErrors' => $form->hasErrors,
     'encodedText' => $encodedText,
     'textToEncode' => $textToEncode,
