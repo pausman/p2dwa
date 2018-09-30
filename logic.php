@@ -12,7 +12,7 @@ session_start();
 if (isset($_SESSION['encoded'])) {
     $encoded = $_SESSION['encoded'];
 
-  extract($encoded);
+    extract($encoded);
 }
 
 # clear session out
