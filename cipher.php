@@ -24,14 +24,15 @@ $textToEncode = $form->get('textToEncode');
 $shiftLength = $form->get('shiftLength');
 $shiftDirection = $form->get('shiftDirection');
 
+
 # validate
-# texttoEncode can be anything but is required
 $submitted = $form->isSubmitted();
 if ($submitted) {
     $errors = $form->validate(
         [
             'textToEncode' => 'required',
-            'shiftLength' => 'required|numeric|min:1|max:2',
+            'shiftLength' => 'required|numeric|min:1|max:26',
+            'shiftDirection' => 'required'
         ]
     );
 }

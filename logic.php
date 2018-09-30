@@ -5,9 +5,11 @@
 */
 # Include the helper functions by Susan Buck
 require('includes/helpers.php');
+
 # start up sessions to get results
 session_start();
 
+$submitted = false;
 // Get the results of the encoding
 if (isset($_SESSION['encoded'])) {
     $encoded = $_SESSION['encoded'];

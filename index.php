@@ -23,26 +23,26 @@ require('logic.php');
         <p> The Caesar Cipher, also known as a shift cipher, is one of the oldest and simplest forms of encrypting a message. It is a type of substitution cipher where each letter in the original message is replaced with a letter corresponding to a certain number of letters shifted up or down in the alphabet. Any non alphabetic characters are not changed.</p>
         <form method='GET' action='cipher.php'>
             <div class="form-group">
-                <label> Enter a text to encode </label>
+                <label> Enter text to encode:
 
-                <textarea class="form-control"
-                          rows="3"
-                          name="textToEncode"
-                          required
-                >
+                    <textarea class="form-control"
+                              rows="3"
+                              name="textToEncode"
+                              required
+                              cols=40
+                    >
                 <?php if (isset($textToEncode)) {
                     echo $textToEncode;
-                } ?></textarea>
-
-
+                } ?>
+                    </textarea>
+                </label>
             </div>
-
             <div class="form-group">
-
                 <label> Shift length:
-
-                    <input type='number' required
-                           maxlength="2" size="2" name='shiftLength'
+                    <input type='number'
+                           required
+                           name='shiftLength'
+                           min="1" max="26"
                            value=
                            '<?php if (isset($shiftLength)) {
                                echo $shiftLength;
@@ -51,10 +51,10 @@ require('logic.php');
                            } ?>'>
                 </label>
             </div>
-
             <div class="checkbox">
                 <label class="form-check-label"
-                       for='shiftDirection'> Shift direction:</label>
+                       for='shiftDirection'> Shift direction:
+                </label>
             </div>
             <div class="checkbox">
 
@@ -79,7 +79,7 @@ require('logic.php');
         </form>
         <?php if (isset($errors) && $errors) : ?>
 
-            <div class='alert alert-danger'>
+            <div class='alert alert-danger' id='validatedErrors'>
                 <ul>
                     <?php foreach ($errors as $error) : ?>
                         <li><?= $error ?></li>

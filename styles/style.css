@@ -16,6 +16,9 @@ input[type=text] {
     text-align: right
 }
 
-#encodedResults {
+#encodedResults,#validatedErrors {
     margin-top: 12px;
+}
+
+
 
