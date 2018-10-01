@@ -42,20 +42,14 @@ require('logic.php');
                 </div>
 
                 <div class="form-group">
-                    <label> Shift length:
-                        <input type='number'
-                               required
-                               name='shiftLength'
-                               min="1" max="26"
-                               value=
-                               <?= isset($shiftLength) ? $shiftLength : '2' ?>
-                               </label>
+                    <label for='shiftLength'> Shift length:
+                        <input type='number' required name='shiftLength' min="1" max="26"
+                               value= <?= isset($shiftLength) ? $shiftLength : '2' ?>>
+                    </label>
                 </div>
 
                 <div class="checkbox">
-                    <label class="form-check-label"
-                           for='shiftDirection'> Shift direction:
-                    </label>
+                    <label class="form-check-label"> Shift direction:</label>
                 </div>
 
                 <div class="checkbox">
