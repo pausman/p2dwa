@@ -44,6 +44,7 @@ require('logic.php');
                 <div class="form-group">
                     <label for='shiftLength'> Shift length:
                         <input type='number' required name='shiftLength' min="1" max="26"
+                               id = 'shiftLength'
                                value= <?= isset($shiftLength) ? $shiftLength : '2' ?>>
                     </label>
                 </div>
