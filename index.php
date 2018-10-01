@@ -31,7 +31,7 @@ require('logic.php');
                                   name="textToEncode"
                                   required
                                   cols=60
-                        ><?= isset($textToEncode) ? $textToEncode:'Enter text to encode' ?></textarea>
+                        ><?= isset($textToEncode) ? sanitize($textToEncode):'Enter text to encode' ?></textarea>
                     </label>
                 </div>
                 <div class="form-group">
@@ -83,7 +83,7 @@ require('logic.php');
 
                 <?php if (isset($encodedText)): ?>
                     <div class='alert alert-primary' role='alert'>
-                        Encoded String: <em><?= $encodedText ?></em>
+                        Encoded String: <em><?= sanitize($encodedText) ?></em>
 
                     </div>
                 <?php endif; ?>

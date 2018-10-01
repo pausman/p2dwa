@@ -1,16 +1,17 @@
 
 
 # Project 2
-+ By: *your first and last name*
-+ Production URL: <http://p2.yourdomain.com>
++ By: Pat Ausman
++ Production URL: http://p1.pmadwa2018.me
 
 ## Outside resources
-m.bootstrap.com
-learncryptography.com/
-helpers.php from Susan Buck 
++ m.bootstrap.com
++ learncryptography.com
++ helpers.php from Susan Buck 
 
 
 ## 3 Unique inputs
+
 *You don't have to list all inputs, just 3 unique ones. The following is an example of what I'd put if my project was the xkcd Password Generator: (1) Text input to indicate number of words in password, (2) Checkbox to indicate whether to include a number (3) Dropdown to indicate what symbol to include*
 
 ## Class
