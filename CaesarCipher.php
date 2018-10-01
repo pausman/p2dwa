@@ -1,18 +1,21 @@
 <?php
 namespace PMA;
+
 class CaesarCipher
 {
-# Properties
 
-# Methods
-
-# construct method
+#
+# construct/setter method
+#
     public function __construct($textToEncode)
     {
-        $this -> textToEncode = $textToEncode;
+        $this->textToEncode = $textToEncode;
     }
 
-    private function normalizeShiftDirection($shiftLength,$shiftDirection)
+#
+# function to account for left or right shifts
+#
+    private function normalizeShiftDirection($shiftLength, $shiftDirection)
     {
         # fix length if the want to shift left
         if ($shiftDirection == 'left') {
@@ -20,13 +23,17 @@ class CaesarCipher
         } else {
             $shiftLength2 = $shiftLength;
         }
+
         return $shiftLength2;
     }
 
-    public function encodeText($shiftLength,$shiftDirection)
+#
+#function to encode the text
+#
+    public function encodeText($shiftLength, $shiftDirection)
     {
         # account for the direction of the shift
-        $shiftLength2 = $this->normalizeShiftDirection($shiftLength,$shiftDirection);
+        $shiftLength = $this->normalizeShiftDirection($shiftLength, $shiftDirection);
 
         # loop through each character in the input striing
         $encodedText = '';
@@ -35,7 +42,6 @@ class CaesarCipher
 
             # only encode alpha characters
             if (ctype_alpha($currentChar)) {
-
                 # Encode upper and lower case
                 if ($currentChar >= ord("a") and $currentChar <= ord("z")) {
                     $baseA = ord('a');
@@ -43,15 +49,13 @@ class CaesarCipher
                     $baseA = ord('A');
                 }
                 $encodedText[$pos] =
-                    chr(((($currentChar + $shiftLength2 + $baseA) % $baseA) % 26) + $baseA);
+                    chr(((($currentChar + $shiftLength + $baseA) % $baseA) % 26) + $baseA);
             } else {
                 # if not alpha just leave it in.
                 $encodedText[$pos] = chr($currentChar);
             }
         }
+
         return $encodedText;
     }
-
-
-
 }

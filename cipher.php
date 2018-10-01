@@ -3,8 +3,8 @@
  * This is the script that processes the data from the form in the file index.php
  * Process:
  * 1, Set up session and includes
- * 2. Get the data from the form request via GET
- * 3. Rotate the message
+ * 2. Get the data from the form request via Form class
+ * 3. Rotate the message via the CaesarCipher class
  * 4. Return the encoded data and redirect
  */
 # Setup the validation code
@@ -19,6 +19,7 @@ session_start();
 
 # Include the helper functions by Susan Buck
 require('includes/helpers.php');
+
 #initialize form class
 $form = new Form($_GET);
 
