@@ -2,7 +2,7 @@
 
 # Project 2
 + By: Pat Ausman
-+ Production URL: http://p1.pmadwa2018.me
++ Production URL: http://p2.pmadwa2018.me
 
 ## Outside resources
 + m.bootstrap.com
