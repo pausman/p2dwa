@@ -1,5 +1,5 @@
 <?php
-/*
+/* Pat Ausman Fall 2018
  * Logic file for the Caesar Cipher application.
  *
 */

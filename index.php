@@ -1,6 +1,6 @@
 <!-- Pat Ausman -->
-<!-- index.html Sept 2018 -->
-<!-- Main webpage for CaesarCipher applcation -->
+<!-- index.html Fall 2018 -->
+<!-- Main web page for CaesarCipher application -->
 
 <!-- declare required files -->
 <?php
@@ -44,7 +44,6 @@ require('logic.php');
                 <div class="form-group">
                     <label for='shiftLength'> Shift length:
                         <input type='number' required name='shiftLength' min="1" max="26"
-                               id = 'shiftLength'
                                value= <?= isset($shiftLength) ? $shiftLength : '2' ?>>
                     </label>
                 </div>

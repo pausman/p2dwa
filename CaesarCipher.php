@@ -1,3 +1,6 @@
+# Pat Ausman Fall 2018
+# Class to process a string into an encoded string
+
 <?php
 namespace PMA;
 

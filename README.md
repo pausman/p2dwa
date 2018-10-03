@@ -7,7 +7,7 @@
 ## Outside resources
 + m.bootstrap.com
 + learncryptography.com
-+ helpers.php from Susan Buck 
++ helpers.php, form.php from Susan Buck
 
 
 ## 3 Unique inputs

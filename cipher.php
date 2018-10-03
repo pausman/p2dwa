@@ -1,5 +1,5 @@
 <?php
-/*
+/* Pat Ausman Fall 2018
  * This is the script that processes the data from the form in the file index.php
  * Process:
  * 1, Set up session and includes
